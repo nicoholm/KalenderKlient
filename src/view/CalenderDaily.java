@@ -20,7 +20,7 @@ public class CalenderDaily extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CalenderDaily frame = new CalenderDaily();
+					CalenderDaily frame = new CalenderDaily(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
