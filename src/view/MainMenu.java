@@ -31,12 +31,15 @@ public class MainMenu extends JPanel {
 	   Font italicFont = new Font("Helvetica Neue", Font.ITALIC | Font.PLAIN, 14);
 	   Font boldFont = new Font("Helvetica Neue", Font.BOLD | Font.PLAIN, 16);
 	   Font plainFont = new Font("Helvetica Neue", Font.PLAIN | Font.PLAIN, 14);
+	   private JButton btnWeather;
 	
 
 	/**
 	 * Create the panel.
 	 */
 	public MainMenu(EventHandler actionEventHandler) {
+		setBackground(Color.LIGHT_GRAY);
+		setForeground(Color.WHITE);
 		
 		this.actionEventHandler = actionEventHandler;
 		setLayout(null);
@@ -44,41 +47,43 @@ public class MainMenu extends JPanel {
 		
 		lblWelcome = new JLabel("Welcome, you're now logged in");
 		lblWelcome.setBackground(Color.BLACK);
-		lblWelcome.setBounds(0, 52, 721, 16);
+		lblWelcome.setBounds(38, 27, 270, 16);
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setForeground(Color.white);
 		lblWelcome.setFont(boldFont);
 		add(lblWelcome);
 		
-		btnIdag = new JButton("Weekly");
-		btnIdag.setBounds(37, 177, 117, 29);
+		btnIdag = new JButton("Daily");
+		btnIdag.setBounds(10, 170, 117, 29);
 		btnIdag.addActionListener( this.actionEventHandler);
 		btnIdag.setActionCommand(ActionConstants.CalenderDaily);
 		add(btnIdag);
 		
-		btnUgeKalendar = new JButton("Daily");
-		btnUgeKalendar.setBounds(37, 88, 117, 29);
+		btnUgeKalendar = new JButton("Weekly");
+		btnUgeKalendar.setBounds(10, 69, 117, 29);
 		btnUgeKalendar.addActionListener( this.actionEventHandler);
 		btnUgeKalendar.setActionCommand(ActionConstants.CalenderWeekly);
 		add(btnUgeKalendar);
 		
-		lblSeedaily = new JLabel("See your appointments for today");
-		lblSeedaily.setBounds(10, 129, 261, 16);
+		lblSeedaily = new JLabel("See your appointments for the week");
+		lblSeedaily.setBackground(Color.LIGHT_GRAY);
+		lblSeedaily.setBounds(-2, 110, 261, 16);
 		lblSeedaily.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSeedaily.setForeground(Color.white);
 		lblSeedaily.setFont(italicFont);
 		add(lblSeedaily);
 		
 		
-		lblSeeWeekly = new JLabel("See you apointments for the week");
-		lblSeeWeekly.setBounds(34, 218, 225, 16);
+		lblSeeWeekly = new JLabel("See you appointments for the day");
+		lblSeeWeekly.setBackground(Color.LIGHT_GRAY);
+		lblSeeWeekly.setBounds(20, 210, 225, 16);
 		lblSeeWeekly.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSeeWeekly.setForeground(Color.white);
 		lblSeeWeekly.setFont(italicFont);
 		add(lblSeeWeekly);
 		
 		lblCurrentuser = new JLabel("");
-		lblCurrentuser.setBounds(0, 101, 727, 16);
+		lblCurrentuser.setBounds(300, 27, 165, 16);
 		lblCurrentuser.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCurrentuser.setForeground(Color.white);
 		lblCurrentuser.setFont(boldFont);
@@ -87,16 +92,23 @@ public class MainMenu extends JPanel {
 		// Standard Swing components
 		
 		btnLogOut = new JButton("Log out");
-		btnLogOut.setBounds(605, 11, 117, 29);
+		btnLogOut.setBounds(367, 265, 117, 29);
 		btnLogOut.addActionListener(this.actionEventHandler);
 		btnLogOut.setActionCommand(ActionConstants.Logout);
 		add(btnLogOut);
 		
 		Background = new JLabel("");
-		Background.setBackground(Color.BLACK);
-		Background.setBounds(10, 6, 728, 400);
-		Background.setIcon(new ImageIcon("res/img/MainMenubg.png"));
+		Background.setHorizontalAlignment(SwingConstants.CENTER);
+		Background.setForeground(Color.WHITE);
+		Background.setBackground(Color.WHITE);
+		Background.setBounds(140, 19, 498, 300);
+		Background.setIcon(new ImageIcon("/Users/nicolaiholmhansen/Desktop/IMG_6408"));
 		add(Background);
+		
+		btnWeather = new JButton("Weather");
+		btnWeather.setActionCommand("CalenderDaily");
+		btnWeather.setBounds(348, 69, 117, 29);
+		add(btnWeather);
 
 	}
 	public void setWellcomeText(String username)
