@@ -10,7 +10,7 @@ import view.Screen;
 
 public class EventHandler implements ActionListener {
 	/** The calendar controller. */
-	private CalenderControls calendarController;
+	private CalenderControls calenderControls;
 	
 	/** The screen. */
 	private Screen screen;
@@ -43,16 +43,16 @@ public class EventHandler implements ActionListener {
 				e1.printStackTrace();
 				labelResult.setText(e1.getMessage());
 			} */
-			screen.show(ViewConstants.CalenderOverview);
+			screen.show(ViewConstants.CalenderWeekly);
 		}
 		else if(cmd.equals(ActionConstants.Logout)){
 			screen.show(ViewConstants.Login);
 		}
-		else if(cmd.equals(ActionConstants.CalendarDay)){
-			screen.show(ViewConstants.CalendarDay);
+		else if(cmd.equals(ActionConstants.CalenderDaily)){
+			screen.show(ViewConstants.CalenderDaily);
 		}
-		else if(cmd.equals(ActionConstants.CalendarOverview)){
-			screen.show(ViewConstants.CalendarOverview);
+		else if(cmd.equals(ActionConstants.CalenderWeekly)){
+			screen.show(ViewConstants.CalenderWeekly);
 		}
 	}
 

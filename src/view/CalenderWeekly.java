@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import controls.EventHandler;
+
 public class CalenderWeekly extends JFrame {
 
 	private JPanel contentPane;
@@ -29,8 +31,9 @@ public class CalenderWeekly extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * @param actionEventHandler 
 	 */
-	public CalenderWeekly() {
+	public CalenderWeekly(EventHandler actionEventHandler) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

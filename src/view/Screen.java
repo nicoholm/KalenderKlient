@@ -35,9 +35,9 @@ public class Screen extends JFrame {
 	/** The login. */ // login
 	private Login login;
 	
-	private CalenderWeekly calendarOverview;
+	private CalenderWeekly calenderWeekly;
 	
-	private CalenderDaily calendarDay;
+	private CalenderDaily calenderDaily;
 	
 	/** The root panel. */
 	private JPanel rootPanel;
@@ -47,7 +47,7 @@ public class Screen extends JFrame {
 	/** The c. */
 	CardLayout c;
 	
-	public Screen(CalenderControls calendarController)
+	public Screen(CalenderControls calenderControls)
 	{
 
 		//Add the properties to the windows
@@ -60,17 +60,17 @@ public class Screen extends JFrame {
 		rootPanel.setLayout(new CardLayout(0,0));
 		
 		//Initiate a new actionEventHandler
-		this.actionEventHandler = new ActionEventHandler(calendarController, this);
+		this.actionEventHandler = new EventHandler(calenderControls, this);
 		
 		//Instanser af JPanels
-		calendarOverview = new CalendarOverview(actionEventHandler);
+		calenderWeekly = new CalenderWeekly(actionEventHandler);
 		login = new Login(actionEventHandler);
-		calendarDay = new CalendarDay(actionEventHandler);
+		calenderDaily = new CalenderDaily(actionEventHandler);
 				
 		//Add the panels to the rootPanel
-		rootPanel.add(calendarOverview, ViewConstants.CalendarOverview);
+		rootPanel.add(calenderWeekly, ViewConstants.CalenderWeekly);
 		rootPanel.add(login, ViewConstants.Login);
-		rootPanel.add(calendarDay, ViewConstants.CalendarDay);
+		rootPanel.add(calenderDaily, ViewConstants.CalenderDaily);
 		
 		setContentPane(rootPanel);
 		
@@ -82,7 +82,7 @@ public class Screen extends JFrame {
 	 *
 	 * @return the mouse event handler
 	 */
-	public ActionEventHandler getActionEventHandler() {
+	public EventHandler getActionEventHandler() {
 		return actionEventHandler;
 	}
 	
@@ -91,7 +91,7 @@ public class Screen extends JFrame {
 	 *
 	 * @param actionEventHandler the new action event handler
 	 */
-	public void setActionEventHandler(ActionEventHandler actionEventHandler) {
+	public void setActionEventHandler(EventHandler actionEventHandler) {
 		this.actionEventHandler = actionEventHandler;
 	}
 	
