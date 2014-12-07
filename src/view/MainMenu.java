@@ -43,8 +43,9 @@ public class MainMenu extends JPanel {
 		setLayout(null);
 		
 		Bg = new JLabel("");
-		Bg.setBounds(20, 283, 382, 144);
-		Bg.setIcon(new ImageIcon("res/img/CopenhagenBusinessSchool.jpg"));
+		Bg.setHorizontalAlignment(SwingConstants.TRAILING);
+		Bg.setBounds(6, 424, 225, 56);
+		Bg.setIcon(new ImageIcon("/Users/nicolaiholmhansen/Documents/JAVA-book-workspace/KalenderKlient/res/img/CopenhagenBusinessSchool.jpg"));
 		add(Bg);
 		
 		
@@ -70,23 +71,23 @@ public class MainMenu extends JPanel {
 		
 		lblSeedaily = new JLabel("See your appointments for the week");
 		lblSeedaily.setBackground(Color.LIGHT_GRAY);
-		lblSeedaily.setBounds(10, 110, 261, 16);
+		lblSeedaily.setBounds(20, 98, 261, 16);
 		lblSeedaily.setHorizontalAlignment(SwingConstants.CENTER);
-		lblSeedaily.setForeground(Color.white);
+		lblSeedaily.setForeground(Color.WHITE);
 		lblSeedaily.setFont(italicFont);
 		add(lblSeedaily);
 		
 		
-		lblSeeWeekly = new JLabel("See you appointments for the day");
+		lblSeeWeekly = new JLabel("See your appointments for the day");
 		lblSeeWeekly.setBackground(Color.LIGHT_GRAY);
-		lblSeeWeekly.setBounds(20, 187, 225, 16);
+		lblSeeWeekly.setBounds(38, 179, 225, 16);
 		lblSeeWeekly.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSeeWeekly.setForeground(Color.white);
 		lblSeeWeekly.setFont(italicFont);
 		add(lblSeeWeekly);
 		
 		lblCurrentuser = new JLabel("");
-		lblCurrentuser.setBounds(300, 27, 165, 16);
+		lblCurrentuser.setBounds(302, 27, 204, 16);
 		lblCurrentuser.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCurrentuser.setForeground(Color.white);
 		lblCurrentuser.setFont(boldFont);
@@ -95,7 +96,7 @@ public class MainMenu extends JPanel {
 		// Standard Swing components
 		
 		btnLogOut = new JButton("Log out");
-		btnLogOut.setBounds(375, 406, 117, 29);
+		btnLogOut.setBounds(432, 451, 117, 29);
 		btnLogOut.addActionListener(this.actionEventHandler);
 		btnLogOut.setActionCommand(ActionConstants.Logout);
 		add(btnLogOut);
@@ -110,7 +111,7 @@ public class MainMenu extends JPanel {
 		lblSeeTheWeather.setForeground(Color.WHITE);
 		lblSeeTheWeather.setFont(new Font("Helvetica Neue", Font.ITALIC, 14));
 		lblSeeTheWeather.setBackground(Color.LIGHT_GRAY);
-		lblSeeTheWeather.setBounds(20, 267, 225, 16);
+		lblSeeTheWeather.setBounds(38, 257, 225, 16);
 		add(lblSeeTheWeather);
 		
 		JButton btnQotd = new JButton("QOTD");
@@ -123,7 +124,7 @@ public class MainMenu extends JPanel {
 		lblCheckQuoteOf.setForeground(Color.WHITE);
 		lblCheckQuoteOf.setFont(new Font("Helvetica Neue", Font.ITALIC, 14));
 		lblCheckQuoteOf.setBackground(Color.LIGHT_GRAY);
-		lblCheckQuoteOf.setBounds(20, 359, 225, 16);
+		lblCheckQuoteOf.setBounds(38, 351, 225, 16);
 		add(lblCheckQuoteOf);
 		
 
