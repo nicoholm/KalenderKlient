@@ -80,7 +80,7 @@ public class MainMenu extends JPanel {
 		
 		lblSeeWeekly = new JLabel("See your appointments for the day");
 		lblSeeWeekly.setBackground(Color.LIGHT_GRAY);
-		lblSeeWeekly.setBounds(38, 179, 225, 16);
+		lblSeeWeekly.setBounds(38, 168, 225, 16);
 		lblSeeWeekly.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSeeWeekly.setForeground(Color.white);
 		lblSeeWeekly.setFont(italicFont);
