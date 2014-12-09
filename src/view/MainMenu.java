@@ -45,13 +45,13 @@ public class MainMenu extends JPanel {
 		Bg = new JLabel("");
 		Bg.setHorizontalAlignment(SwingConstants.TRAILING);
 		Bg.setBounds(6, 424, 225, 56);
-		Bg.setIcon(new ImageIcon("/Users/nicolaiholmhansen/Documents/JAVA-book-workspace/KalenderKlient/res/img/CopenhagenBusinessSchool.jpg"));
+		Bg.setIcon(new ImageIcon("res/img/CopenhagenBusinessSchool.jpg"));
 		add(Bg);
 		
 		
 		lblWelcome = new JLabel("Welcome, you're now logged in");
 		lblWelcome.setBackground(Color.BLACK);
-		lblWelcome.setBounds(38, 27, 270, 16);
+		lblWelcome.setBounds(103, 27, 270, 16);
 		lblWelcome.setHorizontalAlignment(SwingConstants.CENTER);
 		lblWelcome.setForeground(Color.white);
 		lblWelcome.setFont(boldFont);
@@ -60,13 +60,13 @@ public class MainMenu extends JPanel {
 		btnIdag = new JButton("Daily");
 		btnIdag.setBounds(20, 138, 117, 29);
 		btnIdag.addActionListener( this.actionEventHandler);
-		btnIdag.setActionCommand(ActionConstants.CalenderDaily);
+		btnIdag.setActionCommand(ActionConstants.CalendarDay);
 		add(btnIdag);
 		
 		btnUgeKalendar = new JButton("Weekly");
 		btnUgeKalendar.setBounds(20, 69, 117, 29);
 		btnUgeKalendar.addActionListener( this.actionEventHandler);
-		btnUgeKalendar.setActionCommand(ActionConstants.CalenderWeekly);
+		btnUgeKalendar.setActionCommand(ActionConstants.CalendarOverview);
 		add(btnUgeKalendar);
 		
 		lblSeedaily = new JLabel("See your appointments for the week");
@@ -87,8 +87,8 @@ public class MainMenu extends JPanel {
 		add(lblSeeWeekly);
 		
 		lblCurrentuser = new JLabel("");
-		lblCurrentuser.setBounds(302, 27, 204, 16);
-		lblCurrentuser.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCurrentuser.setBounds(428, 27, 204, 16);
+		lblCurrentuser.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCurrentuser.setForeground(Color.white);
 		lblCurrentuser.setFont(boldFont);
 		add(lblCurrentuser);
@@ -96,7 +96,7 @@ public class MainMenu extends JPanel {
 		// Standard Swing components
 		
 		btnLogOut = new JButton("Log out");
-		btnLogOut.setBounds(432, 451, 117, 29);
+		btnLogOut.setBounds(585, 451, 117, 29);
 		btnLogOut.addActionListener(this.actionEventHandler);
 		btnLogOut.setActionCommand(ActionConstants.Logout);
 		add(btnLogOut);

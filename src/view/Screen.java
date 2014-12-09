@@ -6,9 +6,15 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import events.Appointments;
+import events.CreateEvent;
+import events.ShowCalender;
 import utilities.ViewConstants;
 import controls.EventHandler;
 import controls.CalenderControls;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 
 /**
@@ -23,10 +29,12 @@ public class Screen extends JFrame {
 
 	//Windows properties
 	/** The Constant WIDTH. */
-	public static final int WIDTH = 326;
+	public static final int WIDTH = 900;
 	
 	/** The Constant HEIGHT. */
-	public static final int HEIGHT = 603;
+	public static final int HEIGHT = 500;
+	
+	
 	
 	//Declare our JPanels
 	///** The action event handler. */
@@ -35,9 +43,19 @@ public class Screen extends JFrame {
 	/** The login. */ // login
 	private Login login;
 	
-	private CalenderWeekly calenderWeekly;
+	private MainMenu mainMenu;
 	
-	private CalenderDaily calenderDaily;
+	
+	private CalenderDaily calendarDay;
+	
+	private events.User currentUser;
+	
+	private events.ShowCalender email;
+		
+	/** get events. */
+	private Appointments calendarDate;
+	
+
 	
 	/** The root panel. */
 	private JPanel rootPanel;
@@ -47,7 +65,7 @@ public class Screen extends JFrame {
 	/** The c. */
 	CardLayout c;
 	
-	public Screen(CalenderControls calenderControls)
+	public Screen(CalenderControls calendarController)
 	{
 
 		//Add the properties to the windows
@@ -60,17 +78,26 @@ public class Screen extends JFrame {
 		rootPanel.setLayout(new CardLayout(0,0));
 		
 		//Initiate a new actionEventHandler
-		this.actionEventHandler = new EventHandler(calenderControls, this);
+		this.actionEventHandler = new EventHandler(calendarController, this);
 		
 		//Instanser af JPanels
-		calenderWeekly = new CalenderWeekly(actionEventHandler);
 		login = new Login(actionEventHandler);
-		calenderDaily = new CalenderDaily(actionEventHandler);
+		login.setBackground(Color.BLACK);
+		calendarDay = new CalenderDaily(actionEventHandler);
+		mainMenu = new MainMenu(actionEventHandler);
 				
 		//Add the panels to the rootPanel
-		rootPanel.add(calenderWeekly, ViewConstants.CalenderWeekly);
 		rootPanel.add(login, ViewConstants.Login);
-		rootPanel.add(calenderDaily, ViewConstants.CalenderDaily);
+		
+		JLabel label = new JLabel("");
+		label.setForeground(Color.BLACK);
+		label.setHorizontalAlignment(SwingConstants.TRAILING);
+		label.setBounds(81, 416, 225, 56);
+		login.add(label);
+		rootPanel.add(calendarDay, ViewConstants.CalendarDay);
+		rootPanel.add(mainMenu, ViewConstants.MainMenu);
+		
+	
 		
 		setContentPane(rootPanel);
 		
@@ -98,5 +125,40 @@ public class Screen extends JFrame {
 	public void show(String card) {
 		c.show(rootPanel,  card);
 	}
+	
+	public Login getLoginView(){
+		return login;
+	}
+	
+	public MainMenu getMainMenu() {
 
+		return mainMenu;
+	}
+
+	public CalenderDaily getCalendarDay() {
+
+		return calendarDay;
+	}
+
+	public events.User getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(events.User currentUser) {
+		this.currentUser = currentUser;
+	}
+
+	public Appointments getDailyEvents () {
+		return calendarDate;
+	}
+
+	public void setDailyEvents(Appointments calendarDate) {
+		this.calendarDate = calendarDate;
+	}
+	public ShowCalender getRequest () {
+		return email;
+	}
+	public void setRequest(ShowCalender email) {
+		this.email = email;
+	}
 }
